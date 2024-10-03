@@ -1,0 +1,111 @@
+{
+	"alleeu": {
+		"id": "124",
+		"username": "alleee_u",
+		"full_name": "⚜️َعلىٌ عُثّمان",
+		"bio": "23 | Web Developer | Graphic Designer Sculpture of unrequited feelings!⛄️ #AU",
+		"followers_count": 111034,
+		"following_count": 345,
+		"posts_count": 60,
+		"profile_picture_url": "https://images.unsplash.com/photo-1676145460537-b09ed3f4ee48?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		"posts": [
+			{
+				"post_id": "post_98723",
+				"image_url": "https://example.com/design_post1.jpg",
+				"caption": "New logo design concept! What do you think? #logodesign #branding",
+				"likes_count": 230,
+				"comments": [
+					{
+						"username": "designfan_01",
+						"comment": "Looks awesome! Love the color scheme."
+					},
+					{
+						"username": "creativedave",
+						"comment": "Sleek and modern. Great work!"
+					}
+				],
+				"created_at": "2024-09-26T14:32:00Z"
+			},
+			{
+				"post_id": "post_87591",
+				"image_url": "https://example.com/coding_tips.jpg",
+				"caption": "Today's tip: Best practices for clean JavaScript code! #webdevelopment #coding",
+				"likes_count": 341,
+				"comments": [
+					{
+						"username": "code_ninja",
+						"comment": "Thanks for the tips! Super useful."
+					},
+					{
+						"username": "devguru",
+						"comment": "This is gold. Keep sharing!"
+					}
+				],
+				"created_at": "2024-09-25T09:18:00Z"
+			},
+			{
+				"post_id": "post_92875",
+				"image_url": "https://example.com/graphic_design_post.jpg",
+				"caption": "Minimalist design concept for a new project. #graphicdesign #minimalism",
+				"likes_count": 412,
+				"comments": [
+					{
+						"username": "minimalistfan",
+						"comment": "This is so clean and simple. I love it!"
+					},
+					{
+						"username": "visualartist_87",
+						"comment": "Great balance between form and function!"
+					}
+				],
+				"created_at": "2024-09-20T16:45:00Z"
+			}
+		]
+	},
+	"faseh": {
+		"id": "123",
+		"username": "fesh_khan",
+		"full_name": "Faseh Khan",
+		"bio": "Web Developer | Full time web developer | Life Enthuiastit ",
+		"followers_count": 124,
+		"following_count": 902,
+		"posts_count": 10,
+		"profile_picture_url": "https://plus.unsplash.com/premium_photo-1672907031715-fa4214fc3803?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHx8",
+		"posts": [
+			{
+				"post_id": "post_87591",
+				"image_url": "https://example.com/coding_tips.jpg",
+				"caption": "Today's tip: Best practices for clean JavaScript code! #webdevelopment #coding",
+				"likes_count": 341,
+				"comments": [
+					{
+						"username": "code_ninja",
+						"comment": "Thanks for the tips! Super useful."
+					},
+					{
+						"username": "devguru",
+						"comment": "This is gold. Keep sharing!"
+					}
+				],
+				"created_at": "2024-09-25T09:18:00Z"
+			},
+			{
+				"post_id": "post_92875",
+				"image_url": "https://example.com/graphic_design_post.jpg",
+				"caption": "Minimalist design concept for a new project. #graphicdesign #minimalism",
+				"likes_count": 412,
+				"comments": [
+					{
+						"username": "minimalistfan",
+						"comment": "This is so clean and simple. I love it!"
+					},
+					{
+						"username": "visualartist_87",
+						"comment": "Great balance between form and function!"
+					}
+				],
+				"created_at": "2024-09-20T16:45:00Z"
+			}
+		]
+	}
+}

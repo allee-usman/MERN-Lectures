@@ -1,0 +1,30 @@
+h1{
+    color: red;
+    font-size: 32px;
+}
+.bg-black {
+    background-color: #1c1a22;
+    color: #fff;
+}
+.bdr {
+    border: 2px solid red;
+}
+.car-brands {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    color: orange;
+    list-style: decimal;
+}
+.btns-box {
+    display: flex;
+    column-gap: 15px;
+}
+.btn {
+    padding: 5px 10px;
+    background-color: orange;
+    color: black;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}

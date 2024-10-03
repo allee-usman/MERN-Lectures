@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="08_dom.css">
+  <title>Handling Keyboards Events</title>
+</head>
+<body>
+  <h1>Handling Keyboards Events</h1>
+  <form action="#">
+    <div>
+      <label for="name">Enter your name:</label><br>
+      <input type="text" name="name" id="name">
+    </div>
+    <input type="button" value="Submit" onclick="showModalWindow(event)">
+  </form>
+  <div class="modal-window hide" id="modal-window">
+    <div class="header"></div>
+    <div class="body">
+      <p class="para">You have entered name: Ali Usman</p>
+    </div>
+    <div class="footer">
+      <button class="ok-btn">OK</button>
+    </div>
+  </div>
+</body>
+<script src="08_dom.js"></script>
+</html>

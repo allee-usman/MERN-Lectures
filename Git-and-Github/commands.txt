@@ -1,0 +1,112 @@
+// Basic Commands:
+
+1. git add ./filename
+   To add new file/changes (. for all files)
+
+2.  git commit -m "message"
+    commit the changes
+
+3. git push origin main
+   Push all the    
+
+4. git commit -am "message"
+   Stage & commit at same time   
+
+5. git init: 
+   Initializes a new Git repository.
+
+6. git clone [url]: 
+   Clones a remote repository to your local machine.
+
+7. git status: 
+   Shows the current status of your working directory and staging area.
+
+//branch commands
+
+1. git branch
+   List all local branches.
+
+2. git branch <branch-name>  
+   Create a new branch.
+
+3. git branch -d <branch-name>  
+   Delete a local branch.
+
+4. git branch -D <branch-name>  
+   Force delete a local branch.
+
+5. git checkout <branch-name>  
+   Switch to the specified branch.
+
+6. git checkout -b <branch-name>  
+   Create and switch to a new branch.
+
+7. git merge <branch-name>  
+   Merge specified branch into the current branch.
+
+8. git branch -m <new-name>  
+   Rename the current branch.
+
+9. git branch -a  
+   List all local and remote branches.
+
+10. git push origin --delete <branch-name>  
+    Delete a remote branch.
+
+11. git pull origin <branch-name>  
+    Pull updates from a remote branch.
+
+12. git show-branch  
+    Show branches and their commits.
+
+13. git branch --contains <commit>  
+    List branches containing a specific commit.
+
+14. git branch -r  
+    List remote-tracking branches.
+
+15. git branch -vv  
+    Show local branches with remote tracking info.
+
+// Undoing Changes:
+
+1. git reset [file] /
+   Unstages a file while keeping its changes in the working directory.
+
+2. git reset
+   Unstages all files
+
+3. git reset HEAD~1
+   Uncommit chnages for one commit
+
+3. git reset [commit hash]
+   Uncommit chnages for many commits
+
+3. git reset --hard [commit hash]
+   Resets the working directory and staging area to a specific commit, discarding all changes.
+
+4. git reset --soft [commit hash]
+   Moves the HEAD to a previous commit but keeps changes staged.
+
+5. git revert [commit]
+   Creates a new commit that undoes the changes of a specific commit.
+
+6. git checkout -- [file]
+   Discards changes in the working directory for a specific file.    
+
+// History and Tracking Changes:
+
+1. git log
+   Shows the commit history for the current branch.
+
+2. git log --oneline
+   Displays a compact version of the commit history.
+
+3. git diff
+   Shows differences between files in your working directory and the last commit.
+
+4. git diff --staged
+   Shows the differences between staged changes and the last commit.
+   
+5. git show [commit_hash]
+   Shows the details of a specific commit.    

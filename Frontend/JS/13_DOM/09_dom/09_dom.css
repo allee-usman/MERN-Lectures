@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import url(https://db.onlinewebfonts.com/c/be6ee7dae05b1862ef6f63d5e2145706?family=Monotype+Old+English+Text+W01);
+
+:root{
+    --primary_red_color: #890013;
+    --primary_blue_color: #0d2d62;
+    --white: #fff;
+}
+html{
+    scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #6247aa;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+header {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    align-items: center;
+    background-color: #6247aa;
+}
+.header-logo {
+    font-size: 32px;
+    color: #e2cfea;
+    font-weight: 800;
+}
+.login-btn {
+    padding: 5px 15px;
+    font-size: 16px;
+    background-color: #e2cfea;
+    color: #6247aa;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.login-btn:hover {
+    background-color: #0d2d62;
+    color: white;
+}
+main {
+    padding: 20px;
+}

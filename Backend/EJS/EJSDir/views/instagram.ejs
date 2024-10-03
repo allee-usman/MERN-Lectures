@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Instagram</title>
+	</head>
+	<body>
+		<h1>Username: <%= username %></h1>
+		<h3>Followers:</h3>
+		<ul>
+			<% for(let follower of followers) { %>
+			<li><%= follower %></li>
+			<% } %>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: #14213d;
+    color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    row-gap: 20px;
+    
+}
+.main-container {
+    border-radius: 15px;
+    padding: 0 20px 15px 20px;
+    width: 450px;
+    height: fit-content;
+    background-color: #e9ecef;
+}
+.tabs {
+    display: flex;
+    justify-content: space-between;
+}
+.tab {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    width: 90px;
+    row-gap: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.tab:hover {
+    background-color: rgba(255, 255,255,0.9);
+}
+.active-link{
+    border-bottom: 3px solid #4361ee;
+    color: #4361ee;
+}
+.main-content {
+    color: #14213d;
+    padding-top: 20px;
+}
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+p {
+    text-align: justify;
+}
+.event-listner-btn {
+    background-color: #4361ee;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+h1{
+    color: red;
+    font-size: 32px;
+}
+.bg-black {
+    background-color: #1c1a22;
+    color: #fff;
+}
+.my-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.orange-bg {
+    background-color: orange;
+    padding: 10px;
+    color: red;
+}
+.bdr {
+    border: 2px solid red;
+}

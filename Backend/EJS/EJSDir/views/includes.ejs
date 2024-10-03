@@ -1,0 +1,33 @@
+<!-- tag(<%- %>): Outputs the unescaped value into the template -->
+<%- include('includes/header.ejs') %>
+<body>
+	<div class="container">
+		<div class="left">
+			<img src="<%= data.profile_picture_url %>" alt="ass" />
+		</div>
+		<div class="right">
+			<div class="header">
+				<div class="header-top">
+					<p class="username"><%= data.username %></p>
+					<button class="btn follow-btn">Follow</button>
+					<button class="btn msg-btn">Message</button>
+				</div>
+				<div class="header-body">
+					<p class="post-count"><%= data.posts_count %> Posts</p>
+					<p class="followers-count">
+						<% if((data.followers_count < 1000000) && (data.followers_count >
+						1000)) { %> <%= (data.followers_count / 1000).toFixed(1) %>k
+						Followers <% } else{ %> <%= data.followers_count %> Followers <% }
+						%>
+					</p>
+					<p class="following-count"><%= data.following_count %> Following</p>
+				</div>
+			</div>
+			<div class="body">
+				<p class="name"><%= data.full_name %></p>
+				<p class="bio"><%= data.bio %></p>
+			</div>
+		</div>
+	</div>
+</body>
+<%- include('includes/footer.ejs') %>

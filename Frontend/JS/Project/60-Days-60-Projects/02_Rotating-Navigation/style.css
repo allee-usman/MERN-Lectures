@@ -1,0 +1,148 @@
+/* font cdn */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+	--bg-clr: #1a5319;
+	--cl1: #508d4e;
+	--clr2: #80af81;
+	--clr3: #d6efd8;
+	--white-clr: #f4f3ee;
+	--black-clr: #031926;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Space Grotesk', sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--bg-clr);
+	overflow-x: hidden;
+	color: var(--black-clr);
+}
+ul {
+	list-style: none;
+}
+
+.main-container {
+	background-color: #d6efd8;
+	transform-origin: top left;
+	transition: transform 0.5s linear;
+	width: 100vw;
+	min-height: 100vh;
+	padding: 4rem;
+}
+.main-container.show-nav {
+	transform: rotate(-20deg);
+}
+.main-container.show-nav + nav li{
+	transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+.circle-container {
+	position: fixed;
+	top: -100px;
+	left: -100px;
+}
+
+.circle {
+	width: 200px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: #508d4e;
+	position: relative;
+	transition: transform 0.5s linear;
+}
+
+.circle button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 100px;
+	background: transparent;
+	border: 0;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+.circle button:focus {
+	outline: none;
+}
+.circle button#open-btn {
+	left: 60%;
+}
+.circle button#close-btn {
+	top: 60%;
+	transform: rotate(90deg);
+	transform-origin: top left;
+}
+.content-container {
+	max-width: 1000px;
+	margin: 20px auto;
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	align-items: center;
+}
+.blog-title {
+	font-weight: 800;
+	font-size: 2.5rem;
+}
+p {
+	font-size: 1rem;
+	line-height: 1.5;
+}
+h3 {
+	font-size: 1.5rem;
+	margin-bottom: 15px;
+}
+small {
+	font-size: 1.25rem;
+	color: var(--bg-clr);
+	font-weight: 500;
+	font-style: italic;
+}
+.content-container img {
+	max-width: 100%;
+}
+
+nav {
+	position: fixed;
+	bottom: 40px;
+	left: 0;
+}
+.nav-links {
+	padding-left: 1rem;
+}
+nav ul li {
+	transform: translateX(-130%);
+	color: var(--clr3);
+	font-weight: 500;
+	font-size: 1rem;
+	margin-bottom: 20px;
+	cursor: pointer;
+    transition: transform 0.4s ease-in;
+}
+
+nav ul li + li {
+    margin-left: 15px;
+    transform: translate(-180%);
+}
+nav ul li + li + li {
+    margin-left: 30px;
+    transform: translate(-230%);
+}
+nav ul li + li + li + li {
+    margin-left: 45px;
+    transform: translate(-280%);
+}
+
+.nav-items:hover {
+	text-decoration: underline;
+}
