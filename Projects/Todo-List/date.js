@@ -9,6 +9,7 @@ exports.getDate = () => {
 
 	return today.toLocaleDateString('en-US', options);
 };
+
 exports.getDay = () => {
 	const today = new Date();
 
