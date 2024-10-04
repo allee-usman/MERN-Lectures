@@ -3,5 +3,3 @@ node_modules/
 
 # Ignore package-lock.json file
 package-lock.json
-
-# You can add other files or directories you want to ignore here.
