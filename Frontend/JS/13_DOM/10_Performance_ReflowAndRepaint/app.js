@@ -49,13 +49,11 @@ When an element on the page needs to change color or other properties that do no
 //? Why method 1 is slower than method 2?
 //It is becuase we are updating the DOM in every iteration by adding a new paragraph to the page and hence 100 reflows happened. On the other hand, in the method 2, we are adding new paragraph to a div created but not added to DOM, and after adding a 100 new paragraphs to the div, we updates the DOM by adding a div element to the the page. Here only one reflow is happen and hence it is faster.
 
-
 //* Recommended method -> Document Fragment:
 // A Document Fragment is a lightweight and efficient way to hold multiple DOM elements or nodes in memory without adding them directly to the main DOM tree. It acts as a container to group elements before appending them to the document, reducing the number of operations that manipulate the live DOM.
 
 //? Why this is useful?
 //It allows you to create and manipulate multiple elements “off-screen” without causing multiple reflows or repaints in the browser. Also when adding multiple elements to the DOM individually, the browser recalculates layout and repaints the screen for each insertion. Document Fragments reduce this overhead by enabling batch insertions.
-
 
 const t5 = performance.now();
 // Creating a Document Fragment
@@ -69,4 +67,4 @@ for (let i = 0; i < 100; i++) {
 }
 document.body.appendChild(fragment); // 1 reflow and repaint
 const t6 = performance.now();
-console.log(`Time taken by method 3: ${(t6-t5)} seconds`); //output: 1.6s
+console.log(`Time taken by method 3: ${t6 - t5} seconds`); //output: 1.6s
