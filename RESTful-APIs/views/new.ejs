@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<h1>New Post</h1>
+
+<form action="/" method="post">
+	<div class="form-group mb-2">
+		<label for="username">Username</label>
+		<input type="text" id="username" name="username" class="form-control" />
+	</div>
+
+	<div class="form-group mb-3">
+		<label for="post">Post</label>
+		<textarea
+			name="postContent"
+			id="post"
+			cols="30"
+			rows="5"
+			class="form-control"
+		></textarea>
+	</div>
+
+	<button class="btn btn-primary" type="submit" name="btnType" value="newPost">
+		Publish
+	</button>
+</form>
+<%- include('partials/footer') %>

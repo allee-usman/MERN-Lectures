@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+<h1>Edit Post</h1>
+<h4>Post ID: <%= post.postID %></h4>
+<form action="/posts/edit/<%= post.postID  %>?_method=PATCH" method="post">
+	<div class="form-group mb-3">
+		<label for="post">Post</label>
+		<textarea
+			placeholder="Enter new description here..."
+			name="postContent"
+			id="post"
+			cols="30"
+			rows="5"
+			class="form-control mt-2"
+		>
+<%= post.postBody %></textarea
+		>
+	</div>
+
+	<button class="btn btn-primary" type="submit" name="btnType" value="newPost">
+		Save
+	</button>
+</form>
+<%- include('partials/footer') %>

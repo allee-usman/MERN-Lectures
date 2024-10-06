@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<div class="post-card col-12 px-4 py-3">
+	<div class="header">
+		<h5 class="username fw-semibold fs-5"><%= post.username %></h5>
+	</div>
+	<div class="body">
+		<p class="fs-5"><%= post.postBody %></p>
+	</div>
+</div>
+<a href="/posts" class="btn btn-success">Back to All Posts</a>
+<%- include('partials/footer') %>

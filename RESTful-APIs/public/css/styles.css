@@ -1,0 +1,22 @@
+.post-card {
+	background-color: orange;
+}
+.new-post {
+	text-decoration: none;
+	color: #000;
+	background-color: tomato;
+	padding: 10px 20px;
+	border-radius: 30px;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.new-post:hover {
+	opacity: 80%;
+}
+footer {
+	width: 100%;
+	background-color: pink;
+	height: 50px;
+}
