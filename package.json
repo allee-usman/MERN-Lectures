@@ -9,8 +9,12 @@
   "author": "Ali Usman",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^9.0.3",
     "ejs": "^3.1.10",
     "express": "^4.21.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "method-override": "^3.0.0",
+    "mysql2": "^3.11.3",
+    "uuid": "^10.0.0"
   }
 }
