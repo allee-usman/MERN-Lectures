@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<h1 class="home">Home</h1>
+<% posts.forEach(post => { %>
+<div class="d-flex flex-column">
+	<h1 class="title"><%= post.title %></h1>
+	<small class="mb-2"><%= post.author %></small>
+</div>
+<div>
+	<p style="display: inline-block">
+		<%= (post.content.substring(0, 100)) + '....' %>
+	</p>
+	<a href="/posts/<%= post.title %>">Read more</a>
+</div>
+
+<% }); %> <%- include('partials/footer') %>
