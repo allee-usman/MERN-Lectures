@@ -1384,7 +1384,7 @@ The $each modifier is available for use with the "$addToSet" operator and the $p
 Use with the "$addToSet" operator to add multiple values to an array <field> if the values do not exist in the <field>.
 
 -- Example:
-? Use $each with $push Operator
+? Use "$each" with "$push" Operator
 The following example appends each element of [ 90, 92, 85 ] to the scores array for the document where the name field equals joe:
 
 db.students.updateOne(
@@ -1403,16 +1403,12 @@ db.inventory.updateOne(
  )
 
 #10: $position:
-The $position modifier specifies the location in the array at which the $push operator inserts elements. Without the $position modifier, the $push operator inserts elements to the end of the array. See $push modifiers for more information.
-To use the $position modifier, it must appear with the $each modifier. 
-{
-  $push: {
-    <field>: {
-       $each: [ <value1>, <value2>, ... ],
-       $position: <num>
-    }
-  }
-}
+The $position modifier specifies the location in the array at which the $push operator inserts elements. Without the $position modifier, the $push operator inserts elements to the end of the array.
+--Syntax:
+To use the $position modifier, it must appear with the $each modifier:
+{ $push: { <field>: { $each: [ <value1>, <value2>, ... ], $position: <num> } } }
+
+where:
 <num> indicates the position in the array, based on a zero-based array index (position)
 
     A non-negative number corresponds to the position in the array, starting from the beginning of the array. If the value of <num> is greater or equal to the length of the array, the $position modifier has no effect and $push adds elements to the end of the array.
@@ -1464,7 +1460,6 @@ db.students.insertOne(
 The following operation specifies -2 for the $position to add 90 at the position two places before the last element, and then 80 at the position two places before the last element.
 
 Important:
-
 With a negative array index (position), if you specify multiple elements in the $each array, the last added element is in the specified position from the end.
 
 db.students.updateOne(
