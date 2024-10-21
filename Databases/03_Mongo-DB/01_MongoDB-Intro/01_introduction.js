@@ -1043,7 +1043,7 @@ Queries cannot use indexes for the $size portion of a query, although the other 
 MongoDB provides several methods to update documents, which can target a single document or multiple documents, update specific fields, or replace entire documents.
 
 
-We will use the following documents to text examples:
+We will use the following documents to test examples:
 db.collection('inventory').insertMany([
   {
     item: 'canvas',
@@ -1632,5 +1632,186 @@ INFO: Update Operators are allowed.
 
 -- Example:
 db.supplies.findOneAndReplace({_id: 5}, {item: "Board Marker", qty: 500, price: 120})
+
+
+=> 4: "D" of CRUD aka DELETE:
+
+* Delete Methods:
+--  db.collection.deleteOne():
+Delete at most a single document that match a specified filter even though multiple documents may match the specified filter.
+--  db.collection.deleteMany():
+Delete all documents that match a specified filter.
+--  db.collection.findOneAndDelete():
+Deletes a single document based on the filter and sort criteria, returning the deleted document.
+--  db.collection.remove()
+Delete a single document or all documents that match a specified filter.
+
+
+* Structure of an Delete Operation:
+An update operation typically consists of:
+-- filter:	
+is of type "document" and specifies deletion criteria(matching conditi) using query operators.    
+-- writeConcern	
+optional parameter of type "document", expressing the write concern. Omit to use the default write concern.
+-- collation
+optional parameter of type "document". It specifies the collation to use for the operation.
+INFO: Collation allows users to specify language-specific rules for string comparison, such as rules for lettercase and accent marks.
+-- hint	
+optional parameter of type "document". It specifies the index to use to support the query predicate.
+The option can take an index specification document or the index name string. If you specify an index that does not exist, the operation errors.
+
+#1: db.collection.deleteOne():
+Removes a single document from a collection.
+
+-- Syntax:
+db.collection.deleteOne(
+    {<filter>},
+    {
+      writeConcern: <document>,
+      collation: <document>,
+      hint: <document|string>
+    }
+)
+    
+-- Examples:
+The orders collection has documents with the following structure:
+db.orders.insertOne(
+   {
+      _id: ObjectId("563237a41a4d68582c2509da"),
+      stock: "Brent Crude Futures",
+      qty: 250,
+      type: "buy-limit",
+      limit: 48.90,
+      creationts: ISODate("2015-11-01T12:30:15Z"),
+      expiryts: ISODate("2015-11-01T12:35:15Z"),
+      client: "Crude Traders Inc."
+   }
+)
+The following operation deletes the order with id = 1:
+db.orders.deleteOne( { _id: 1 } )
+
+The following operation deletes the first document with "expiryts" greater than ISODate("2015-11-01T12:40:15Z"):
+db.orders.deleteOne( { expiryts: { $gt: ISODate("2015-11-01T12:40:15Z") } } )
+
+#2: db.collection.deleteMany():
+Removes all documents that match the filter from a collection.
+
+-- Syntax:
+db.collection.deleteMany(
+    {<filter>},
+    {
+      writeConcern: <document>,
+      collation: <document>,
+      hint: <document|string>
+    }
+)
+
+-- Examples:
+The following operation deletes all documents where client : "Crude Traders Inc.":
+db.orders.deleteMany( { "client" : "Crude Traders Inc." } )
+
+#3: db.collection.findOneAndDelete():
+Deletes a single document based on the filter and sort criteria, returning the deleted document.
+
+-- Syntax:
+db.collection.findOneAndDelete(
+  { <filter>},
+   {
+     writeConcern: <document>,
+     projection: <document>,
+     sort: <document>,
+     maxTimeMS: <number>,
+     collation: <document>
+   }
+)
+where writeConcern, collation are explained above and:
+-- projection
+is also an optional parameter of type document, which represents a subset of fields to return. To return all fields in the returned document, omit this parameter.
+If the projection argument is not a document, the operation errors.
+-- sort
+is also an optional parameter of type document, which specifies a sorting order for the documents matched by the filter.
+If the sort argument is not a document, the operation errors.
+-- maxTimeMS
+optional parameter of type number. It Specifies a time limit in milliseconds within which the operation must complete within. Throws an error if the limit is exceeded.
+
+-- Examples:
+The scores collection contains documents similar to the following:
+
+ db.scores.insertMany( [
+   { _id: 6305, name : "A. MacDyver", "assignment" : 5, "points" : 24 },
+   { _id: 6308, name : "B. Batlock", "assignment" : 3, "points" : 22 },
+   { _id: 6312, name : "M. Tagnum", "assignment" : 5, "points" : 30 },
+   { _id: 6319, name : "R. Stiles", "assignment" : 2, "points" : 12 },
+   { _id: 6322, name : "A. MacDyver", "assignment" : 2, "points" : 14 },
+   { _id: 6234, name : "R. Stiles", "assignment" : 1, "points" : 10 }
+] )
+
+The following operation finds the first document where name : M. Tagnum and deletes it:
+db.scores.findOneAndDelete(
+   { "name" : "M. Tagnum" }
+)
+
+? Sort And Delete A Document:
+The following operation first finds all documents where name : "A. MacDyver". It then sorts by points ascending before deleting the document with the lowest points value:
+db.scores.findOneAndDelete(
+   { "name" : "A. MacDyver" },
+   { sort : { "points" : 1 } }
+)
+
+? Projecting the Deleted Document
+The following operation uses projection to only return the _id and assignment fields in the returned document:
+
+db.scores.findOneAndDelete(
+   { "name" : "A. MacDyver" },
+   { sort : { "points" : 1 }, projection: { "assignment" : 1 } }
+)
+
+#4: db.collection.remove() (Deprecated):
+Removes documents from a collection.
+
+Important: This method is deprecated in mongosh.
+
+-- Syntax
+The db.collection.remove() method can have one of two syntaxes. The remove() method can take a query document and an optional justOne boolean:
+db.collection.remove(
+    <query>,
+    <justOne>
+)
+where "justOne" id an optional "boolean" parameter to limit the deletion to just one document, set to true. Omit to use the default value of false and delete all documents matching the deletion criteria.
+
+-- Example:
+The following query will delete all documents matching the criteria of having quantity greater than 20:
+db.products.remove(
+    { qty: { $gt: 20 } }
+)
+
+? Remove a Single Document that Matches a Condition:
+To remove the first document that match a deletion criteria, call the remove method with the query criteria and the justOne parameter set to true or 1.
+
+The following operation removes the first document from the collection products where qty is greater than 20:
+db.products.remove( { qty: { $gt: 20 } }, true )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 */
