@@ -1,5 +1,5 @@
 /*
-=> Mongoose is a library/pacakage/module which creates between MongoDB and Node.js JavaScript Runtime Environment. It is an ODM (object data modeling) library.
+=> Mongoose is a library/pacakage/module which creates connection between MongoDB and Node.js JavaScript Runtime Environment. It is an ODM (object data modeling) library.
 
 ->  Mongoose can do every task that a Mongo Shell do.
 ->  It helps us to design schemas for DB.
@@ -15,14 +15,16 @@ const mongoose = require('mongoose');
 
 //Note: mongoose.connect() is an asynchronous function, hence it returns a promise
 
-//handle promise
-//valid method to establish connection
-async function main() {
+// handle promise
+// valid method to establish connection
+async function connectDB() {
 	await mongoose.connect('mongodb://127.0.0.1:27017/testDB');
 
 	// use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
-main()
+
+// as async function returns a promise, so we can utilize .then() and .catch() methods
+connectDB()
 	.then((res) => {
 		console.log('Connection established!');
 	})
