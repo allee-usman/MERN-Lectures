@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 async function main() {
 	await mongoose.connect('mongodb://127.0.0.1:27017/testDB');
-
-	// use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
 main()
@@ -66,7 +64,7 @@ Without .exec(), the query can still be executed using .then() or by passing a c
 // 		console.log(err);
 // 	});
 
-//* Method 1 - retrieve sepcific fields
+//* Method 1 - retrieve sepcific fields, 0 means exclude and 1 means include
 // Blog.find({ author: 'Ali Usman' }, { _id: 0, title: 1, author: 1, body: 1 })
 // 	.then((result) => {
 // 		console.log(result);
@@ -113,7 +111,7 @@ let id = '6709695f50f46c050f2ebe6c';
 
 /*
 
-Recommended: Use 'findById()' if you want to retrieve exactly one document/row. Secondly "findById()" returns "object" while "find()" returns array of objects if it is one object inside the array.
+Recommended: Use 'findById()' if you want to retrieve exactly one document/row. Secondly "findById()" returns "object" while "find()" returns array of objects no matter if it is only one object inside the array.
 
 
 => Queries with ".exec()":

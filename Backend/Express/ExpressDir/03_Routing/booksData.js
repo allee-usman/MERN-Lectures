@@ -1,0 +1,42 @@
+exports.books = [
+	{
+		id: 1,
+		title: 'Think Like a Programmer',
+		author: ' V. Anton Spraule',
+		genre: 'Programming',
+		year: 2018,
+		available: true,
+	},
+	{
+		id: 2,
+		title: 'You Don’t Know JS: Scope & Closures',
+		author: 'Kyle Simpson',
+		genre: 'Non-Fiction',
+		year: 2014,
+		available: false,
+	},
+	{
+		id: 3,
+		title: 'JavaScript: The Good Parts',
+		author: 'Douglas Crockford',
+		genre: 'Non-Fiction',
+		year: 2008,
+		available: true,
+	},
+	{
+		id: 4,
+		title: 'Learn JavaScript Visually',
+		author: 'Ivelin Demirov',
+		genre: 'Non-Fiction',
+		year: 2014,
+		available: true,
+	},
+	{
+		id: 5,
+		title: 'JavaScript and JQuery: Interactive Front-End Web Development',
+		author: 'Jon Duckett',
+		genre: 'Non-Fiction',
+		year: 2014,
+		available: false,
+	},
+];

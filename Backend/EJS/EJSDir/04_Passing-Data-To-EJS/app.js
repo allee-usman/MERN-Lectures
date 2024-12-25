@@ -14,6 +14,7 @@ app.set('views', path.join(__dirname, '../views'));
 // 	let diceValue = Math.floor(Math.random() * 6) + 1;
 // 	res.render('rolldice', { value: diceValue });
 // });
+//Note: Change the "diceValue" name to "value" to test the above code
 
 //* having same key:value names is also fine i.e
 // app.get('/rolldice', (req, res) => {

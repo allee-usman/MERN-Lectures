@@ -46,7 +46,5 @@ Once the main thread is empty, the job of event loop is to push the callback fun
 //? continuously monitor when the main thread is empty
 //? push callback functions from microtask queue and callback queue into main thread for its execution
 
-//Note: The only difference between callback queue and microtask queue is, in the microtask queue the callback functiona which are waiting to be executed has higher priority than the callback functions which are waiting in callback queue
 
 */
-

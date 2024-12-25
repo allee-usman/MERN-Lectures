@@ -1,5 +1,5 @@
 /*
-* Method - 1: app.use():
+* Method - 1: app.use(callback):
 It listen requests of every type i.e GET, POST etc
 */
 
@@ -12,7 +12,7 @@ app.listen(port, () => {
 	console.log(`App listening on port ${port}`);
 });
 
-//all https requests will be text based. Express convert them into objects. This process is called parsing.
+//-- all https requests will be text based. Express convert them into objects. This process is called parsing.
 
 // app.use((req, res) => {
 //     console.log("Request received!");
@@ -25,16 +25,16 @@ app.listen(port, () => {
 
 /*
 * Sending Response:
-"res.send()" is used to send responses of any type i.e string, boolean, number, html, json, object etc
+# "res.send()" is used to send responses of any type i.e string, boolean, number, html, json, object etc
 See example:
 */
-// app.use((req, res) => {
-// 	console.log('Request received!');
-// 	// res.send(Buffer.from('whoop'));
-// 	// res.send({ some: 'json' });
-// 	// res.send('<p>some html</p>');
-// 	// res.status(404).send('Sorry, we cannot find that!');
-// 	// res.status(500).send({ error: 'something blew up' });
-// });
+app.use((req, res) => {
+	console.log('Request received!');
+	// res.send(Buffer.from('whoop'));
+	// res.send({ some: 'json' });
+	// res.send('<h1>some html</h1>');
+	// res.status(404).send('Sorry, we cannot find that!');
+	// res.status(500).send({ error: 'something blew up' });
+});
 
 //Note: Response sent by app.use() will be same for multiple route i.e localhost:8080/help OR localhost:8080/home

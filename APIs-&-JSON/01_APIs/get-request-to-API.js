@@ -30,7 +30,7 @@ app.post('/', (req, res) => {
 
 			//* convert hexadecimal into JS object
 			const weatherData = JSON.parse(data);
-			// console.log(weatherData); // output: object
+			console.log(weatherData); // output: object
 
 			let temp = weatherData.main.temp;
 			let weatherIcon = weatherData.weather[0].icon;

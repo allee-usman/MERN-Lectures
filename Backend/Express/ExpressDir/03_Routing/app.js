@@ -5,21 +5,30 @@ To generate different responses for different routes/paths, app.get() is used.
 See example:
 */
 
+const express = require('express');
+const app = express();
+
+const port = 8080;
+
+app.listen(port, () => {
+	console.log(`App listening on port ${port}`);
+});
+
 //Syntax: app.get(path, callback)
-app.get('/aliusman', (req, res) => {
+app.get('/', (req, res) => {
 	console.log('Request Recieved');
-	res.send('You connected to aliusman path.');
+	res.send('You connected to home path.');
 });
 app.get('/contacts', (req, res) => {
 	console.log('Request Recieved');
-	res.send('You connected to contact path.');
+	res.send('You connected to contacts path.');
 });
 app.get('/about', (req, res) => {
 	console.log('Request Recieved');
 	res.send('You connected to about path.');
 });
 
-//* app.post():
+//* app.post(): used to listen POST requests
 app.post('/', (req, res) => {
 	res.send('You sent a POST request!!');
 });
@@ -30,4 +39,5 @@ app.post('/', (req, res) => {
 app.use('*', (req, res) => {
 	res.send('Invalid path');
 });
-// If "*" path added before a valid path handler, then that path handler will be ignored.
+
+//NOTE: If "*" path added before a valid path handler, then that path handler will be ignored.

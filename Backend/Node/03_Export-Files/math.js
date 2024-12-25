@@ -1,6 +1,6 @@
 //$: module.export is a special object which contains all the information which a file wants to send/export to other files requireing it.
 
-console.log(module); //ooutput: object
+console.log(module); //output: object
 
 // const sum = (a, b) => a + b;
 // const subtract = (a, b) => a - b;

@@ -46,7 +46,7 @@ $ Model in mongoose is a class with which we construct a document.
 const modelName = mongoose.Model("collection_name", schema)
 Recommended: By convention "modelName" and "collection_name" prefer to keep same and singular.
 
--- Example: 
+-- Example:
 const Blog = mongoose.model("Blog", blogSchema);
 
 */

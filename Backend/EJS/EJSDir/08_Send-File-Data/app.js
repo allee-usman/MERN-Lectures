@@ -11,7 +11,7 @@ app.set('views', path.join(__dirname, '../views'));
 app.get('/ig/:username', (req, res) => {
 	//require the file
 	const instaData = require('../data.json');
-	//since we want the data of only ":username" so
+	// since we want the data of only ":username" so
 	let username = req.params.username;
 	let data = instaData[username];
 	if (data) {

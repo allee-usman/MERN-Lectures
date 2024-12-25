@@ -35,28 +35,28 @@ const newStr = myName.concat(regNum);
 //#8: fontColor(): creates a string that embeds this string in a <font> element ( <font color="...">str</font> ), which causes this string to be displayed in the specified font color
 // console.log(myName.fontcolor('red'));
 
-// 9) includes(): performs a case-sensitive search to determine whether a given string may be found within this string, returning true or false as appropriate
+//#9: includes(): performs a case-sensitive search to determine whether a given string may be found within this string, returning true or false as appropriate
 // console.log(myName.includes('A')); //output: true
 // console.log(myName.includes('a')); //output: true
 // console.log(myName.includes('B')); //output: false
 
-// 10) indexOf(): searches this string and returns the index of the first occurrence of the specified substring
+//#10: indexOf(): searches this string and returns the index of the first occurrence of the specified substring
 // console.log(myName.indexOf('A')); //output: 0
 
-// 11) lastindexOf(): searches this string and returns the index of the last occurrence of the specified substring
+//#11: lastindexOf(): searches this string and returns the index of the last occurrence of the specified substring
 // console.log(myName.lastIndexOf('A')); //output: 0
 
-// 12) link(): screates a string that embeds this string in an <a> element ( <a href="...">str</a> ), to be used as a hypertext link to another URL.
+//#12: link(): screates a string that embeds this string in an <a> element ( <a href="...">str</a> ), to be used as a hypertext link to another URL.
 // console.log(myName.link()); //with undefined href attribute
 // console.log(myName.link('www.google.com')); //with href attribute having value as 'www.google.com'
 
-// 13) match():  retrieves the result of matching this string against a regular expression.
+//#13: match():  retrieves the result of matching this string against a regular expression.
 // const paragraph = 'Hi, My name is Ali Usman & I love coding';
 // const regex = /[A-Z]/g;
 // const found = paragraph.match(regex);
-// console.log(found); // output output: Array ["H", "M", "A", "U"]
+// console.log(found); // output output: Array ["H", "M", "A", "U", "I"]
 
-// 13) matchAll():  returns an iterator of all results matching this string against a regular expression, including capturing groups.
+//#13: matchAll():  returns an iterator of all results matching this string against a regular expression, including capturing groups.
 // const paragraph = 'Hi, My name is Ali Usman & I love coding';
 // const regex = /[A-Z]/g;
 // const found = paragraph.match(regex);
