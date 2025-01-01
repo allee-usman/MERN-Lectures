@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width,
+       initial-scale=1.0"
+		/>
+		<title>Client Side Validation</title>
+	</head>
+
+	<body>
+		<h2>HTML Form Validation</h2>
+		<form action="" method="post">
+			<label for="name"
+				>Name (required, min 3 chars, max 20 chars, no special
+				characters):</label
+			><br />
+			<input
+				type="text"
+				id="name"
+				name="name"
+				required
+				minlength="3"
+				maxlength="20"
+				pattern="^[A-Za-z0-9]+$"
+				title="Only alphanumeric characters are allowed."
+			/><br /><br />
+			<!-- email with pattern attribute for email validation -->
+			<label for="email">Email:</label>
+			<input
+				type="email"
+				id="email"
+				name="email"
+				placeholder="example@email.com"
+				minlength="5"
+				maxlength="50"
+				multiple
+				required
+				pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+			/>
+
+			<!-- list="emailSuggestions" -->
+			<!-- <datalist id="emailSuggestions">
+				<option value="example@gmail.com"></option>
+				<option value="example@yahoo.com"></option>
+				<option value="example@outlook.com"></option>
+				<option value="example@hotmail.com"></option>
+			</datalist> -->
+
+			<br /><br />
+
+			<label for="number">Enter a number:</label><br />
+			<input
+				type="number"
+				id="number"
+				name="number"
+				placeholder="Enter a value"
+				min="10"
+				max="100"
+				step="5"
+				required
+			/>
+			<br /><br />
+
+			<label>
+				Choose your preferred party date:
+				<input type="date" name="party" min="2017-04-01" max="2017-04-30" />
+			</label>
+			<br /><br />
+
+			<label for="file">Upload your file:</label><br />
+			<input
+				type="file"
+				id="file"
+				name="file"
+				accept=".jpg,.jpeg,.png,.pdf"
+				multiple
+				required
+			/>
+			<br /><br />
+
+			<label for="password">Enter your password:</label><br />
+			<input
+				type="password"
+				id="password"
+				name="password"
+				placeholder="Enter a strong password"
+				minlength="8"
+				maxlength="20"
+				pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+				required
+			/>
+			<br /><br />
+
+			<fieldset>
+				<legend>Select one option:</legend>
+
+				<!-- Radio buttons with labels -->
+				<input
+					type="radio"
+					id="javascript"
+					name="language"
+					value="javascript"
+					required
+				/>
+				<label for="javascript">JavaScript</label><br />
+
+				<input type="radio" id="python" name="language" value="python" />
+				<label for="python">Python</label><br />
+
+				<input type="radio" id="java" name="language" value="java" />
+				<label for="java">Java</label><br />
+
+				<input type="radio" id="csharp" name="language" value="csharp" />
+				<label for="csharp">C#</label><br />
+
+				<!-- A disabled option -->
+				<input type="radio" id="php" name="language" value="php" disabled />
+				<label for="php">PHP (Currently unavailable)</label><br />
+			</fieldset>
+			<br /><br />
+
+			<label for="range">Set a value (10-100):</label><br />
+			<input
+				type="range"
+				id="range"
+				name="range"
+				min="10"
+				max="100"
+				step="5"
+				required
+			/>
+			<br /><br />
+
+			<label for="phone">Enter your phone number:</label><br />
+			<input
+				type="tel"
+				id="phone"
+				name="phone"
+				placeholder="+92 123 1234567"
+				pattern="^\+?[0-9]+$"
+				minlength="11"
+				maxlength="11"
+				required
+			/>
+			<br /><br />
+
+			<label for="accept-terms">I accept the terms and conditions:</label><br />
+			<input type="checkbox" id="accept-terms" name="accept-terms" required />
+			<span> (required)</span><br /><br />
+
+			<label for="subscribe-newsletter">Subscribe to our newsletter:</label
+			><br />
+			<input
+				type="checkbox"
+				id="subscribe-newsletter"
+				name="subscribe-newsletter"
+			/>
+			<span> (optional)</span><br /><br />
+
+			<label for="preferences"
+				>Choose your preferences (At least one option required):</label
+			><br />
+			<input
+				type="checkbox"
+				id="preference1"
+				name="preferences"
+				value="preference1"
+				required
+			/>
+			<label for="preference1">Preference 1</label><br />
+			<input
+				type="checkbox"
+				id="preference2"
+				name="preferences"
+				value="preference2"
+			/>
+			<label for="preference2">Preference 2</label><br />
+			<input
+				type="checkbox"
+				id="preference3"
+				name="preferences"
+				value="preference3"
+			/>
+			<label for="preference3">Preference 3</label><br /><br />
+
+			<!-- Submit button -->
+			<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>
